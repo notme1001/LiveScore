@@ -36,7 +36,6 @@ yarn add
 yarn start
 ```
 Check http://localhost:3000 to see the results.
-Demo 
 
 ## ScreenShoot
 >Web
