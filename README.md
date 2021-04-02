@@ -27,12 +27,16 @@ $ cd LiveScore && cp .env.example .env
 Using npm
 ```cfg
 npm install
+npm start
 ```
 
 Using yarn
 ```cfg
 yarn add
+yarn start
 ```
+Check http://localhost:3000 to see the results.
+Demo 
 
 ## ScreenShoot
 >Web
