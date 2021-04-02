@@ -5,6 +5,7 @@ import { faSpinner, } from '@fortawesome/free-solid-svg-icons'
 const Home = lazy(() => import('../container/pages/home'));
 const AllScore = lazy(() => import('../container/pages/allScore'));
 const Details = lazy(() => import('../container/pages/details'));
+import './static/css/style.css';
 
 const NotFound = () => {
   return <Redirect to="/" />;
