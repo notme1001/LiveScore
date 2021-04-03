@@ -19,8 +19,6 @@ function Index() {
     
     const {mutate, error, data} = useSWR(`${process.env.REACT_APP_BASE_URL}/api/football/match/matchfixtures?date=${date ?? dateNow}&utc=${utc}`, fetchData)
     const AllData = data?.data?.result.sort((a, b) => a.status - b.status).slice(0, pagination)
-
-    console.log(AllData)
     
     return (
         <Layout>
@@ -28,6 +26,11 @@ function Index() {
                 <p className="text-4xl lg:text-5xl lg:mt-8 mt-5 font-semibold text-gray-800 text-center">All Score</p>
             </div>
 
+            {!data ? (
+                <div className="flex justify-center items-center w-screen h-screen bg-primeSand">
+                    <FontAwesomeIcon icon={faSpinner} className="animate-spin text-xl text-blue-500 outline-none"/>		
+                </div>
+            ) : 
             <InfiniteScroll
                 dataLength={AllData.length}
                 next={() => {
@@ -64,6 +67,7 @@ function Index() {
                     ) : AllData.map((response, index) => { return(<ListSoccerMobile response={response} />) })}
                 </div>
             </InfiniteScroll>
+            }
         </ Layout>
     )
 }
